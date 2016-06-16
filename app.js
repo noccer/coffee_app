@@ -29,7 +29,7 @@ app.use(express.static(__dirname + '/public'));
 
 
 app.get('/', function(req, res) {
-	mongoose.model('Coffee').find({}, function(err, coffee){
+	Coffee.find({}, function(err, coffee){
 		if(err){
 			return console.error(err);
 		} else {
@@ -59,7 +59,7 @@ app.get('/createorder', function(req, res) {
 
 app.post('/create', function(req, res){
 
-	mongoose.model('Coffee').create({
+	Coffee.create({
 		customer_name: req.body.customer_name,
 		coffee_type: req.body.coffee_type,
 		number_of_coffees: 1,
@@ -75,8 +75,17 @@ app.post('/create', function(req, res){
 	res.redirect('/')
 })
 
-// app.post('/submitorder', function(req, res){
-// })
+// app.delete('/:idx/delete', function(req, res){
+//   Coffee.findOneAndRemove({
+//     id: req.params.id
+//   }, function(err){
+//     if(err) console.log(err);
+//     console.log("Coffee deleted!");
+//   }
+//
+// });
+//
+// });
 
 
 
