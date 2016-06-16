@@ -63,7 +63,7 @@ app.post('/create', function(req, res){
 		customer_name: req.body.customer_name,
 		coffee_type: req.body.coffee_type,
 		number_of_coffees: 1,
-		sugar: req.body.sugars,
+		sugar: req.body.sugar,
 		size: req.body.size
 	}, function(err, coffee){
 		if(err){
