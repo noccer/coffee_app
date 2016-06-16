@@ -17,25 +17,19 @@ var jason = new Coffee({
 	size: 2
 })
 
-mongoose.connect('mongodb://localhost/test_coffee_app');
+mongoose.connect('mongodb://localhost/coffee_orders');
 
-// Coffee.create(niall);*
+// Coffee.create(jason);*
 
 app.set('view engine', 'ejs');
 
 app.get('/', function(req, res) {
 
-	// res.send(niall);
 
 	Coffee.find({}, function(err, coffee) {
 	if (err) return res.send(err);
 	res.send(coffee);
-});
-    // response.render('index', {
-    //     title: 'Home',
-    //     page_description: 'This is a template page made using .ejs files instead of .pug files.',
-    //     colour: 'cyan'
-    // });
+	});
 });
 
 app.post('/create', function(request, response) {
