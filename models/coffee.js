@@ -10,6 +10,6 @@ var coffee_schema = new mongoose.Schema({
 
 });
 
-var Coffee = mongoose.model('Coffee', coffeeSchema);
+var Coffee = mongoose.model('Coffee', coffee_schema);
 
 module.exports = Coffee;
