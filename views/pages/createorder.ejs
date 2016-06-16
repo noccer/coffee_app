@@ -18,26 +18,24 @@
 
         <!-- Page Layout here -->
         <div class="row">
-            <div id="main" class="nine columns">
+            <div id="main" class="eight columns">
 
                 <!-- The above form looks like this -->
-                <form action="/my-handling-form-page" method="post">
+                <form action="/create" method="post">
 
                     <div class="six columns">
-                        <label for="name">Name:</label>
-                        <input class="u-full-width" type="text" id="name" name="user_name" />
+                        <label for="coffee">Name:</label>
+                        <input class="u-full-width" type="text" id="customer_name" name="user_name" />
 
-
-
-                        <label for="msg">Size:</label>
-                        <select class="u-full-width" name="coffee size">
-                            <option value="small">small</option>
-                            <option value="meduim">meduim</option>
-                            <option value="large">large</option>
-                            <option value="large">giant</option>
+                        <label for="coffee">Size:</label>
+                        <select class="u-full-width" name="size">
+                            <option value="1">small</option>
+                            <option value="2">meduim</option>
+                            <option value="3">large</option>
+                            <option value="4">giant</option>
+                            
                         </select>
-
-                        <br>
+                          <p>&nbsp</p>
                         <button type="submit">Send your message</button>
 
                     </div>
@@ -45,16 +43,16 @@
 
                     <div class="six columns">
 
-                        <label for="mail">Coffee type:</label>
-                        <select class="u-full-width" class="u-full-width" name="Icecream Flavours">
+                        <label for="coffee">Coffee type:</label>
+                        <select class="u-full-width" class="u-full-width" name="coffee_type">
                             <option value="Latte">Caffé Latte</option>
                             <option value="Cappuccino">Cappuccino</option>
                             <option value="Espresso">Espresso</option>
                             <option value="White">The Flat White</option>
                         </select>
 
-                        <label for="name">Sugars:</label>
-                        <input class="u-full-width" type="text" id="name" name="user_name" />
+                        <label for="coffee">Sugars:</label>
+                        <input class="u-full-width" type="text" id="name" name="sugar" />
 
                     </div>
                     <div>
@@ -64,9 +62,9 @@
 
             </div>
 
-            <div id="lists" class="three columns">
+            <div id="lists" class="four columns">
                 <div class="list-col">
-                    <div>Order 1 <i class="fa fa-pencil" aria-hidden="true"></i></div>
+                    <div>Order 1 <a href="#"><i class="pen fa fa-pencil" aria-hidden="true"></i><a href="#"><i class="fa fa-trash" aria-hidden="true"></i></div></a>
                     <div>Order 2 </div>
                     <div>Order 3 </div>
                     </ul>
