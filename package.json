@@ -1,0 +1,26 @@
+{
+  "name": "2_coffee_app",
+  "version": "1.0.0",
+  "description": "## NPM's installed ``` npm install express ``` ``` npm install mongoose",
+  "main": "niall-app.js",
+  "dependencies": {
+    "body-parser": "^1.15.1",
+    "ejs": "^2.4.2",
+    "express": "^4.13.4",
+    "mongoose": "^4.5.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/noccer2016/coffee_app.git"
+  },
+  "author": "niall",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/noccer2016/coffee_app/issues"
+  },
+  "homepage": "https://github.com/noccer2016/coffee_app#readme"
+}
