@@ -19,12 +19,18 @@
         <!-- Page Layout here -->
         <div class="row">
             <div id="main" class="nine columns">
-              <button class="button-primary">Button element</button>
+              <button id="big-button" class="button-primary">CREATE YOUR ORDER</button>
 
             </div>
 
             <div id="lists" class="three columns">
-
+              <% for(var i = 0; i < coffee.length; i++){ %>
+             <%= coffee[i].customer_name %>
+             <%= coffee[i].coffee_type %>
+             <%= coffee[i].number_of_coffees %>
+             <%= coffee[i].sugar %>
+             <%= coffee[i].size %>
+           <% } %>
 
             </div>
         </div>

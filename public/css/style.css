@@ -47,3 +47,15 @@ footer{
   text-align: center;
   color: #c1d4c8;
 }
+
+.list-col{
+  padding: 10px;
+  display: flex;
+  flex-flow: column;
+  margin-left: 15px;
+}
+
+.list-col div{
+  padding: 5px 0;
+
+}
