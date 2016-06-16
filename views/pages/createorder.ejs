@@ -18,12 +18,18 @@
 
         <!-- Page Layout here -->
         <div class="row">
-            <div id="main" class="eight columns">
+
+
+
+
+
+
+            <div id="main" class="five columns">
 
                 <!-- The above form looks like this -->
                 <form action="/create" method="post">
 
-                    <div class="six columns">
+
                         <label for="coffee">Name:</label>
                         <input class="u-full-width" type="text" id="customer_name" name="user_name" />
 
@@ -33,15 +39,7 @@
                             <option value="2">meduim</option>
                             <option value="3">large</option>
                             <option value="4">giant</option>
-                            
                         </select>
-                          <p>&nbsp</p>
-                        <button type="submit">Send your message</button>
-
-                    </div>
-
-
-                    <div class="six columns">
 
                         <label for="coffee">Coffee type:</label>
                         <select class="u-full-width" class="u-full-width" name="coffee_type">
@@ -52,28 +50,17 @@
                         </select>
 
                         <label for="coffee">Sugars:</label>
-                        <input class="u-full-width" type="text" id="name" name="sugar" />
+                        <input class="u-full-width" type="text" id="name" name="su" />
 
-                    </div>
-                    <div>
+                          <p>&nbsp</p>
+                        <button type="submit">Send your message</button>
 
-                    </div>
+
                 </form>
 
             </div>
 
-            <div id="lists" class="four columns">
-                <div class="list-col">
-                    <div>Order 1 <a href="#"><i class="pen fa fa-pencil" aria-hidden="true"></i><a href="#"><i class="fa fa-trash" aria-hidden="true"></i></div></a>
-                    <div>Order 2 </div>
-                    <div>Order 3 </div>
-                    </ul>
 
-                </div>
-            </div>
-            <footer>
-                <% include ../partials/footer %>
-            </footer>
 </body>
 
 </html>

@@ -18,25 +18,43 @@
 
         <!-- Page Layout here -->
         <div class="row">
-            <div id="main" class="nine columns">
-              <button id="big-button" class="button-primary">CREATE YOUR ORDER</button>
+            <div id="main" class="five columns">
+              <a href="/createorder"><button id="big-button" class="button-primary">CREATE YOUR ORDER</button></a>
 
             </div>
 
-            <div id="lists" class="three columns">
-              <% for(var i = 0; i < coffee.length; i++){ %>
-               <%= coffee[i].customer_name %>
-               <%= coffee[i].coffee_type %>
-               <%= coffee[i].number_of_coffees %>
-               <%= coffee[i].sugar %>
-               <%= coffee[i].size %>
-           <% } %>
+            <div id="lists" class="seven columns">
+              <table>
+                <thead>
+                  <tr>
+                    <th>name</th>
+                    <th>type</th>
+                    <th>sugar</th>
+                    <th>size</th>
+                    <th>edit</th>
+                    <th>delete</th>
 
+                  </tr>
+                </thead>
+
+              <% for(var i = 0; i < coffee.length; i++){ %>
+              <tbody>
+                <tr>
+                  <td><%= coffee[i].customer_name %></td>
+                  <td><%= coffee[i].coffee_type %></td>
+                  <td><%= coffee[i].sugar %></td>
+                  <td><%= coffee[i].size %></td>
+                  <td><a href="#"><i class="pen fa fa-pencil" aria-hidden="true"></i></a></td>
+                  <td><a href="#"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
+
+                </tr>
+              </tbody>
+
+           <% } %>
+              </table>
             </div>
         </div>
-        <footer>
-            <% include ../partials/footer %>
-        </footer>
+
 </body>
 
 </html>
