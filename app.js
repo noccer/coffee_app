@@ -1,7 +1,13 @@
+// Problems:
+// CSS fails in editorder.ejs
+// can't display all coffees from mongodb to layout
+// can't make the select tag work in editorder
+
 var express = require('express');
 var app = express();
 var mongo = require('mongodb');
 var bodyParser = require('body-parser');
+var path = require('path'); // new stuff
 
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/coffee_orders');
@@ -11,6 +17,10 @@ app.use(bodyParser.urlencoded({
     extended: false
 }));
 
+// To make a layout page that will display on every single route
+var ejsLayouts = require("express-ejs-layouts");
+app.use(ejsLayouts);
+
 var Coffee = require('./models/coffee');
 
 var jason = new Coffee({
@@ -19,13 +29,22 @@ var jason = new Coffee({
 	number_of_coffees: 1,
 	sugar: 3,
 	size: 2
-})
+});
 
 
 // Coffee.create(jason);
 
 app.set('view engine', 'ejs');
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(path.join(__dirname, 'public')));
+
+// app.locals.toffee =  Coffee.find({username: 'Jason'}, function(err, coffee){
+//   if(err){
+//     return console.error(err);
+//   } else {
+//     return coffee;
+//
+//   }
+// });
 
 
 app.get('/', function(req, res) {
@@ -41,10 +60,10 @@ app.get('/', function(req, res) {
 							title: 'Home',
 							"coffee" : coffee
 						});
-					// }
+					// };
 				// })
 		}
-	})
+	});
 
 });
 
@@ -72,20 +91,44 @@ app.post('/create', function(req, res){
 
 		}
 	});
-	res.redirect('/')
-})
+	res.redirect('/');
+});
 
-// app.delete('/:idx/delete', function(req, res){
-//   Coffee.findOneAndRemove({
-//     id: req.params.id
-//   }, function(err){
-//     if(err) console.log(err);
-//     console.log("Coffee deleted!");
-//   }
-//
-// });
-//
-// });
+
+app.get('/delete/:id', function(req, res){
+  Coffee.findById(req.params.id, function(err, coffee){ // Find the specific coffee order id and delete it
+    coffee.remove(function(err, coffee){
+      res.redirect('/');
+    });
+  });
+});
+
+app.get('/edit/:id', function(req, res){ // To render the edit page
+  Coffee.findById(req.params.id, function(err, coffee){ // Find the specific coffee order id and map the data as variable coffee
+    res.render('pages/editorder', {
+      title: "Edit order",
+      page_description: 'This is a template page made using .ejs files instead of .pug files.',
+      colour: 'cyan',
+      coffee: coffee});
+  });
+});
+
+app.post('/update/:id', function(req, res){
+  Coffee.findById(req.params.id, function(err, coffee){ //Look for the specific id
+    if (req.body){ //If found?
+      Coffee.update({_id: req.params.id}, { // Query the specific ID to update
+        customer_name: req.body.customer_name,
+        coffee_type: req.body.coffee_type,
+        sugar: req.body.sugar,
+        size: req.body.size
+      }, function(err, coffee){
+        res.redirect('/');
+      });
+    }
+  });
+});
+
+
 
 
 

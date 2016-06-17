@@ -14,11 +14,11 @@
             <div id="main" class="five columns">
 
                 <!-- The above form looks like this -->
-                <form action="/create" method="post">
+                <form action="/update/<%= coffee.id %>" method="post">
 
 
                         <label for="coffee">Name:</label>
-                        <input class="u-full-width" type="text" id="customer_name" name="customer_name" />
+                        <input class="u-full-width" type="text" id="customer_name" name="customer_name" value="<%=coffee.customer_name%>" />
 
                         <label for="coffee">Size:</label>
                         <select class="u-full-width" name="size">
@@ -37,7 +37,7 @@
                         </select>
 
                         <label for="coffee">Sugars:</label>
-                        <input class="u-full-width" type="text" id="name" name="sugar" />
+                        <input class="u-full-width" type="text" id="name" name="sugar" value="<%= coffee.sugar%>" />
 
                           <p>&nbsp</p>
                         <button type="submit">Send your message</button>
